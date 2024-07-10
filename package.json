@@ -21,8 +21,10 @@
   ],
   "dependencies": {
     "@ant-design/colors": "^7.0.2",
+    "@ant-design/icons": "^5.3.1",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
+    "@focela/snackbar": "^3.0.1",
     "@mui/material": "^5.15.12",
     "@mui/system": "^5.15.12",
     "axios": "^1.6.7",
@@ -32,6 +34,7 @@
     "react-dom": "^18.2.0",
     "react-intl": "^6.6.2",
     "stylis-plugin-rtl": "^2.1.1",
+    "swr": "^2.2.5",
     "vite-tsconfig-paths": "^4.3.1",
     "web-vitals": "^4.2.1"
   },

@@ -176,5 +176,6 @@ typings/
 .env.local
 .env.production.local
 .env.test.local
+.npmrc
 package-lock.json
 yarn.lock
