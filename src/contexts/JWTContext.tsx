@@ -68,7 +68,7 @@ export const JWTProvider = ({ children }: { children: ReactElement }) => {
   }, []);
 
   const login = async (account: string, password: string) => {
-    const response = await postLogin(account, password);
+    const response = await postLogin({ account, password });
     const { access_token, user } = response.data;
     setSession(access_token);
     dispatch({

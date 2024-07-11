@@ -35,6 +35,32 @@ export function useGetSnackbar() {
   return useMemo(() => ({ snackbar: data! }), [data]);
 }
 
+export function openSnackbar(snackbar: SnackbarProps) {
+  const { action, open, message, anchorOrigin, variant, alert, transition, close, actionButton } = snackbar;
+
+  mutate(
+    endpoints.key,
+    (currentSnackbar: any) => {
+      return {
+        ...currentSnackbar,
+        action: action || initialState.action,
+        open: open || initialState.open,
+        message: message || initialState.message,
+        anchorOrigin: anchorOrigin || initialState.anchorOrigin,
+        variant: variant || initialState.variant,
+        alert: {
+          color: alert?.color || initialState.alert.color,
+          variant: alert?.variant || initialState.alert.variant
+        },
+        transition: transition || initialState.transition,
+        close: close || initialState.close,
+        actionButton: actionButton || initialState.actionButton
+      };
+    },
+    false
+  );
+}
+
 export function closeSnackbar() {
   mutate(
     endpoints.key,
