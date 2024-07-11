@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import useSWR from 'swr';
+import useSWR, { mutate } from 'swr';
 import { SnackbarProps } from '~/types/snackbar';
 
 const initialState: SnackbarProps = {
@@ -33,4 +33,14 @@ export function useGetSnackbar() {
   });
 
   return useMemo(() => ({ snackbar: data! }), [data]);
+}
+
+export function closeSnackbar() {
+  mutate(
+    endpoints.key,
+    (currentSnackbar: any) => {
+      return { ...currentSnackbar, open: false };
+    },
+    false
+  );
 }

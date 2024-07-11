@@ -1,4 +1,9 @@
 import { UserProfile } from '~/types/user';
+import { ReactElement } from 'react';
+
+export type GuardProps = {
+  children: ReactElement | null;
+};
 
 export type JWTContextType = {
   isLoggedIn: boolean;

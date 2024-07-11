@@ -82,3 +82,5 @@ export const JWTProvider = ({ children }: { children: ReactElement }) => {
 
   return <JWTContext.Provider value={{ ...state, login }}>{children}</JWTContext.Provider>;
 };
+
+export default JWTContext;
