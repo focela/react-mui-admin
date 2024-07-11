@@ -89,8 +89,6 @@ function getColorStyle({ variant, theme, color }: IconButtonStyleProps) {
   }
 }
 
-// ==============================|| STYLED - ICON BUTTON ||============================== //
-
 interface StyleProps extends IconButtonStyleProps {
   shape?: IconButtonShapeProps;
 }
@@ -138,8 +136,6 @@ const IconButtonStyle = styled(MuiIconButton, { shouldForwardProp: (prop) => pro
     ...getColorStyle({ variant, theme, color })
   })
 );
-
-// ==============================|| EXTENDED - ICON BUTTON ||============================== //
 
 export interface Props extends IconButtonProps {
   shape?: IconButtonShapeProps;

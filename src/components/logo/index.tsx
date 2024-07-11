@@ -7,8 +7,6 @@ import LogoIcon from '~/components/logo/LogoIcon';
 import { APP_DEFAULT_PATH } from '~/config';
 import useAuth from '~/hooks/useAuth';
 
-// ==============================|| MAIN LOGO ||============================== //
-
 interface Props {
   reverse?: boolean;
   isIcon?: boolean;
