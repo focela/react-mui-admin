@@ -5,6 +5,7 @@ import { persistReducer } from 'redux-persist';
 
 // PROJECTS IMPORT
 import menuReducer from '~/store/slices/menu';
+import snackbarReducer from '~/store/slices/snackbar';
 
 const reducers = combineReducers({
   menu: persistReducer(
@@ -14,7 +15,8 @@ const reducers = combineReducers({
       keyPrefix: 'focela-'
     },
     menuReducer
-  )
+  ),
+  snackbar: snackbarReducer
 });
 
 export default reducers;

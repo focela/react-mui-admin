@@ -4,6 +4,8 @@ import Locales from '~/components/Locales';
 import ScrollTop from '~/components/ScrollTop';
 import { JWTProvider as AuthProvider } from '~/contexts/JWTContext';
 import Snackbar from '~/components/third-party/Snackbar';
+import { RouterProvider } from 'react-router-dom';
+import router from '~/routes';
 
 export default function App() {
   return (
@@ -14,7 +16,7 @@ export default function App() {
             <AuthProvider>
               <>
                 <Snackbar>
-                  <h1>This is App.tsx!</h1>;
+                  <RouterProvider router={router} />
                 </Snackbar>
               </>
             </AuthProvider>
