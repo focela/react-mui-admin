@@ -1,17 +1,15 @@
-import { SvgIconTypeMap } from '@mui/material/SvgIcon';
-import { OverridableComponent } from '@mui/material/OverridableComponent';
 import { ComponentClass, FunctionComponent } from 'react';
 
-export type KeyedObject = {
-  [key: string]: string | number | KeyedObject | any;
-};
+import { OverridableComponent } from '@mui/material/OverridableComponent';
+import { SvgIconTypeMap } from '@mui/material';
 
 export type OverrideIcon =
   | (OverridableComponent<SvgIconTypeMap<{}, 'svg'>> & {
       muiName: string;
     })
   | ComponentClass<any>
-  | FunctionComponent<any>;
+  | FunctionComponent<any>
+  | any;
 
 export interface GenericCardProps {
   title?: string;

@@ -1,38 +1,31 @@
+import { GenericCardProps } from '~/types/index';
 import { ReactNode } from 'react';
-import { ChipProps } from '@mui/material/Chip';
-import { GenericCardProps } from '~/types';
-
-export type NavActionProps = {
-  type: NavActionType;
-  label: string;
-  function?: any;
-  url?: string;
-  target?: boolean;
-  icon: GenericCardProps['iconPrimary'] | string;
-};
+import { ChipProps } from '@mui/material';
 
 export type NavItemType = {
-  breadcrumbs?: boolean;
+  id?: string;
+  icon?: GenericCardProps['iconPrimary'];
+  target?: boolean;
+  external?: boolean;
+  url?: string | undefined;
+  type?: string;
+  title?: ReactNode | string;
+  color?: 'primary' | 'secondary' | 'default' | undefined;
   caption?: ReactNode | string;
+  breadcrumbs?: boolean;
+  disabled?: boolean;
+  chip?: ChipProps;
   children?: NavItemType[];
   elements?: NavItemType[];
-  chip?: ChipProps;
-  color?: 'primary' | 'secondary' | 'default' | undefined;
-  disabled?: boolean;
-  external?: boolean;
-  isDropdown?: boolean;
-  icon?: GenericCardProps['iconPrimary'] | string;
-  id?: string;
-  link?: string;
   search?: string;
-  target?: boolean;
-  title?: ReactNode | string;
-  type?: string;
-  url?: string | undefined;
-  actions?: NavActionProps[];
 };
 
 export type MenuProps = {
-  isDashboardDrawerOpened: boolean;
-  isComponentDrawerOpened: boolean;
+  openItem: string[];
+  openComponent: string;
+  selectedID: string | null;
+  drawerOpen: boolean;
+  componentDrawerOpen: boolean;
+  menu: NavItemType;
+  error: null;
 };
