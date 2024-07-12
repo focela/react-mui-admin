@@ -1,3 +1,9 @@
+import ThemeCustomization from '~/themes';
+
 export default function App() {
-  return <h1>This is App.tsx!</h1>;
+  return (
+    <ThemeCustomization>
+      <h1>This is App.tsx!</h1>;
+    </ThemeCustomization>
+  );
 }
