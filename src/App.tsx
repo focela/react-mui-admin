@@ -6,6 +6,7 @@ import { JWTProvider as AuthProvider } from '~/contexts/JWTContext';
 import Snackbar from '~/components/third-party/Snackbar';
 import { RouterProvider } from 'react-router-dom';
 import router from '~/routes';
+import MuiSnackbar from '~/components/extended/Snackbar';
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
               <>
                 <Snackbar>
                   <RouterProvider router={router} />
+                  <MuiSnackbar />
                 </Snackbar>
               </>
             </AuthProvider>

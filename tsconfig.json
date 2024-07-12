@@ -29,7 +29,7 @@
     "**/*.ts",
     "**/*.tsx",
     "src/**/*",
-    "vite.config.mts"
+    "vite.config.ts"
   ],
   "references": [
     {

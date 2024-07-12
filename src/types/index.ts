@@ -3,6 +3,10 @@ import { ComponentClass, FunctionComponent } from 'react';
 import { OverridableComponent } from '@mui/material/OverridableComponent';
 import { SvgIconTypeMap } from '@mui/material';
 
+export type KeyedObject = {
+  [key: string]: string | number | KeyedObject | any;
+};
+
 export type OverrideIcon =
   | (OverridableComponent<SvgIconTypeMap<{}, 'svg'>> & {
       muiName: string;
