@@ -4,6 +4,7 @@ import App from '~/App';
 import { Provider as ReduxProvider } from 'react-redux';
 import { persister, store } from '~/store';
 import { PersistGate } from 'redux-persist/integration/react';
+import { ConfigProvider } from '~/contexts/ConfigContext';
 
 const container = document.getElementById('root');
 const root = createRoot(container!);
@@ -11,7 +12,9 @@ const root = createRoot(container!);
 root.render(
   <ReduxProvider store={store}>
     <PersistGate loading={null} persistor={persister}>
-      <App />
+      <ConfigProvider>
+        <App />
+      </ConfigProvider>
     </PersistGate>
   </ReduxProvider>
 );
