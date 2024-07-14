@@ -1,6 +1,8 @@
 import { DefaultConfigProps, LAYOUT_CONST } from '~/types/config';
 
 export const APP_DEFAULT_PATH = '/dashboard/analytics';
+export const DRAWER_WIDTH = 260;
+export const MINI_DRAWER_WIDTH = 60;
 
 const config: DefaultConfigProps = {
   container: true,
