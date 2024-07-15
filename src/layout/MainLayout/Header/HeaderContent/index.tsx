@@ -9,6 +9,7 @@ import LocalizationSection from '~/layout/MainLayout/Header/HeaderContent/Locali
 import Box from '@mui/material/Box';
 import NotificationSection from '~/layout/MainLayout/Header/HeaderContent/NotificationSection';
 import MessageSection from '~/layout/MainLayout/Header/HeaderContent/MessageSection';
+import FullScreenSection from '~/layout/MainLayout/Header/HeaderContent/FullScreenSection';
 
 export default function HeaderContent() {
   const { layout } = useConfig();
@@ -29,6 +30,7 @@ export default function HeaderContent() {
 
       <NotificationSection />
       <MessageSection />
+      {!matchDownLg && <FullScreenSection />}
     </>
   );
 }
