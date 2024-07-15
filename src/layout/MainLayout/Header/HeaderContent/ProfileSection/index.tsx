@@ -108,7 +108,7 @@ const ProfileSection = () => {
       >
         <Stack direction="row" spacing={2} alignItems="center" sx={{ p: 0.5 }}>
           <Avatar alt="profile user" src={avatar1} size="sm" />
-          <Typography variant="subtitle1">
+          <Typography variant="subtitle1" sx={{ textTransform: 'capitalize' }}>
             {user?.first_name} {user?.last_name}
           </Typography>
         </Stack>
@@ -154,6 +154,9 @@ const ProfileSection = () => {
                           <Stack>
                             <Typography variant="h6">
                               {user?.first_name} {user?.last_name}
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                              UI/UX Designer
                             </Typography>
                           </Stack>
                         </Stack>
