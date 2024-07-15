@@ -10,6 +10,7 @@ export type JWTContextType = {
   isInitialized?: boolean;
   user?: UserProfile | null | undefined;
   login: (account: string, password: string) => Promise<void>;
+  logout: () => void;
 };
 
 export interface InitialLoginContextProps {

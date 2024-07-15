@@ -44,7 +44,7 @@ export const JWTProvider = ({ children }: { children: ReactElement }) => {
         if (serviceToken && verifyToken(serviceToken)) {
           setSession(serviceToken);
           const response = await getUser();
-          const { user } = response.data;
+          const user = response.data;
           dispatch({
             type: 'LOGIN',
             payload: {
@@ -81,11 +81,16 @@ export const JWTProvider = ({ children }: { children: ReactElement }) => {
     });
   };
 
+  const logout = async () => {
+    setSession(null);
+    dispatch({ type: 'LOGOUT' });
+  };
+
   if (state.isInitialized !== undefined && !state.isInitialized) {
     return <Loader />;
   }
 
-  return <JWTContext.Provider value={{ ...state, login }}>{children}</JWTContext.Provider>;
+  return <JWTContext.Provider value={{ ...state, login, logout }}>{children}</JWTContext.Provider>;
 };
 
 export default JWTContext;
