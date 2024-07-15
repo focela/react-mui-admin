@@ -5,6 +5,7 @@ import { jwtDecode } from 'jwt-decode';
 import { KeyedObject } from '~/types';
 import axiosInstance from '~/utils/axios';
 import { getUser, postLogin } from '~/api/auth';
+import Loader from '~/components/Loader';
 
 const initialState: InitialLoginContextProps = {
   isLoggedIn: false,
@@ -79,6 +80,10 @@ export const JWTProvider = ({ children }: { children: ReactElement }) => {
       }
     });
   };
+
+  if (state.isInitialized !== undefined && !state.isInitialized) {
+    return <Loader />;
+  }
 
   return <JWTContext.Provider value={{ ...state, login }}>{children}</JWTContext.Provider>;
 };
