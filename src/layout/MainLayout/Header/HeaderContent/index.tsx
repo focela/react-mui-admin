@@ -8,6 +8,7 @@ import MegaMenuSection from '~/layout/MainLayout/Header/HeaderContent/MegaMenuSe
 import LocalizationSection from '~/layout/MainLayout/Header/HeaderContent/LocalizationSection';
 import Box from '@mui/material/Box';
 import NotificationSection from '~/layout/MainLayout/Header/HeaderContent/NotificationSection';
+import MessageSection from '~/layout/MainLayout/Header/HeaderContent/MessageSection';
 
 export default function HeaderContent() {
   const { layout } = useConfig();
@@ -27,6 +28,7 @@ export default function HeaderContent() {
       {matchDownLg && <Box sx={{ width: '100%', ml: 1 }} />}
 
       <NotificationSection />
+      <MessageSection />
     </>
   );
 }
