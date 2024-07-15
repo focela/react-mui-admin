@@ -5,6 +5,7 @@ import DrawerHeader from '~/layout/MainLayout/Drawer/DrawerHeader';
 import SearchSection from '~/layout/MainLayout/Header/HeaderContent/SearchSection';
 import { useMemo } from 'react';
 import MegaMenuSection from '~/layout/MainLayout/Header/HeaderContent/MegaMenuSection';
+import LocalizationSection from '~/layout/MainLayout/Header/HeaderContent/LocalizationSection';
 
 export default function HeaderContent() {
   const { layout } = useConfig();
@@ -13,11 +14,14 @@ export default function HeaderContent() {
 
   const megaMenu = useMemo(() => <MegaMenuSection />, []);
 
+  const localization = useMemo(() => <LocalizationSection />, []);
+
   return (
     <>
       {layout === LAYOUT_CONST.HORIZONTAL && !matchDownLg && <DrawerHeader open={true} />}
       {!matchDownLg && <SearchSection />}
       {!matchDownLg && megaMenu}
+      {!matchDownLg && localization}
     </>
   );
 }
