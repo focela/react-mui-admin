@@ -6,6 +6,8 @@ import SearchSection from '~/layout/MainLayout/Header/HeaderContent/SearchSectio
 import { useMemo } from 'react';
 import MegaMenuSection from '~/layout/MainLayout/Header/HeaderContent/MegaMenuSection';
 import LocalizationSection from '~/layout/MainLayout/Header/HeaderContent/LocalizationSection';
+import Box from '@mui/material/Box';
+import NotificationSection from '~/layout/MainLayout/Header/HeaderContent/NotificationSection';
 
 export default function HeaderContent() {
   const { layout } = useConfig();
@@ -22,6 +24,9 @@ export default function HeaderContent() {
       {!matchDownLg && <SearchSection />}
       {!matchDownLg && megaMenu}
       {!matchDownLg && localization}
+      {matchDownLg && <Box sx={{ width: '100%', ml: 1 }} />}
+
+      <NotificationSection />
     </>
   );
 }
