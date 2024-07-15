@@ -12,6 +12,7 @@ import MessageSection from '~/layout/MainLayout/Header/HeaderContent/MessageSect
 import FullScreenSection from '~/layout/MainLayout/Header/HeaderContent/FullScreenSection';
 import Customization from '~/layout/MainLayout/Customization';
 import ProfileSection from '~/layout/MainLayout/Header/HeaderContent/ProfileSection';
+import MobileSection from '~/layout/MainLayout/Header/HeaderContent/MobileSection';
 
 export default function HeaderContent() {
   const { layout } = useConfig();
@@ -36,6 +37,7 @@ export default function HeaderContent() {
 
       <Customization />
       {!matchDownLg && <ProfileSection />}
+      {matchDownLg && <MobileSection />}
     </>
   );
 }
